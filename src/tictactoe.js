@@ -1,6 +1,4 @@
 $(document).ready(function() {
-	html = '';
-
 	tictactoe = {
 		currentPlayer: 1,
 		records: [
