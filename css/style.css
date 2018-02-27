@@ -39,3 +39,79 @@ button.tab{
 #result{
 	text-align: center;
 }
+
+#calculator{
+	width: 700px;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px;
+	background-color: green;
+}
+
+#display-bar{
+	width: 90%;
+	background-color: #e3e3e3;
+	height: 15%;
+	margin-bottom: 20px;
+	font-size: 3rem;
+	font-weight: bold;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	overflow: hidden;
+	padding: 10px;
+}
+
+#pads{
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+	height: 70%;
+}
+
+#numpad{
+	display: flex;
+	width: 60%;
+	flex-wrap: wrap;
+}
+
+.num{
+	width: 30%;
+	margin: 0.5%;
+	height: 25%;
+	border: 1px solid;
+	border-radius: 5px;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.num#pad0{
+	width: 61%;
+}
+
+#operand{
+	display: flex;
+	width: 35%;
+	flex-wrap: wrap;
+}
+
+.operand,
+.system{
+	width: 49%;
+	margin: 0.5%;
+	height: 25%;
+	border: 1px solid;
+	border-radius: 5px;
+	font-size: 3rem;
+	font-weight: bold;
+}
+
+.operand#equal{
+	height: 50.5%;
+}
+
+.operand#times{
+	margin-top: -32%;
+}

@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
 	window.tabs_data = {
-		['tictactoe']: {display_name: 'Tic Tac Toe'},
 		['calc']: {display_name: 'Working Calculator'},
+		['tictactoe']: {display_name: 'Tic Tac Toe'},
 		['additional']: {display_name: 'Additional Feature'},
 	};
 
