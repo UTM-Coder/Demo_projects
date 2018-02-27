@@ -22,11 +22,11 @@ $(document).ready(function() {
 				if(position % 4 == 0)dia1 += record[position];
 				if(position != 0 && position != 8 && position % 2 == 0)dia2 += record[position];
 			}
-			// If no zero at all draws.
-			if(countForDraw == 9)return 'draw';
 			// If to tatal not 3 nor 30 no wins
-			else if(col3 == '30' || col2 == '30' || col1 == '30' || row3 == '30' || row2 == '30' || row1 == '30' || dia2 == '30' || dia1 == '30') return 'X'
+			if(col3 == '30' || col2 == '30' || col1 == '30' || row3 == '30' || row2 == '30' || row1 == '30' || dia2 == '30' || dia1 == '30') return 'X'
 			else if(col3 == '3' || col2 == '3' || col1 == '3' || row3 == '3' || row2 == '3' || row1 == '3' || dia2 == '3' || dia1 == '3') return 'O'
+			// If no zero at all draws.
+			else if(countForDraw == 9)return 'draw';
 			// Default playing
 			else return 'playing';
 		},
