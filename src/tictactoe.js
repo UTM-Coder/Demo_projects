@@ -101,6 +101,5 @@ $(document).ready(function() {
 		`	
 		},
 	}
-	// $('#tictactoe-tab').html(tictactoe.code(tictactoe.records[0]));
 	tictactoe.display();
 });
