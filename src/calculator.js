@@ -11,7 +11,7 @@ $(document).ready(function() {
 				let operand = $(this).attr('id');
 				me.operandPressed(operand);
 			})
-			$('#reset').click(function(){me.reset()});
+			$('#calc-reset').click(function(){me.reset()});
 			$('#clear').click(function(){me.clear()});
 		},
 		numberPressed: function(number){
@@ -64,7 +64,10 @@ $(document).ready(function() {
 		value: 0,
 		status: [1, 'none'],
 		updateDisplay: function(){
-			$('#display-bar').html(this.text);
+			$('#display-bar').html('');
+			setTimeout(() => {
+				$('#display-bar').html(this.text);
+			}, 100);
 		},
 		code: function() {
 			return `
@@ -86,7 +89,7 @@ $(document).ready(function() {
 						</div>
 						<div id="operand">
 							<button class="system" id="clear">CLR</button>
-							<button class="system" id="reset">AC</button>
+							<button class="system" id="calc-reset">AC</button>
 							<button class="operand" id="plus">+</button>
 							<button class="operand" id="divd">/</button>
 							<button class="operand" id="minus">-</button>

@@ -63,7 +63,7 @@ $(document).ready(function() {
 			$('#undo').off('click').on('click', function(){
 				tictactoe.undo();
 			});
-			$('#reset').off('click').on('click', function(){
+			$('#board-reset').off('click').on('click', function(){
 				tictactoe.reset();
 			});
 		},
@@ -97,7 +97,7 @@ $(document).ready(function() {
 			</div>
 			<h2 id="result">${result}</h2>
 			<button id="undo">Undo</button>
-			<button id="reset">Reset</button>
+			<button id="board-reset">Reset</button>
 		`	
 		},
 	}
