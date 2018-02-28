@@ -18,33 +18,37 @@ $(document).ready(function() {
 			if(this.status[0] == 0){
 				this.text += number;
 			} else {
-				this.text = number + '';
+				let pre = '';
+				if(number == '.')pre = '0';
+				this.text = pre + number;
 				this.status[0] = 0;
 			}
 			this.updateDisplay();
 		},
 		operandPressed: function(operand){
 			// solve
-			let now = parseInt(this.text);
-			switch(this.status[1]){
-				case 'plus':
-					this.value += now;
-					this.text = this.value;
-					break;
-				case 'divd':
-					this.value /= now;
-					this.text = this.value;
-					break;
-				case 'minus':
-					this.value -= now;
-					this.text = this.value;
-					break;
-				case 'times':
-					this.value *= now;
-					this.text = this.value;
-					break;
-				default:
-					this.value = now;
+			let now = parseFloat(this.text);
+			if(!this.status[0]){
+				switch(this.status[1]){
+					case 'plus':
+						this.value += now;
+						this.text = this.value;
+						break;
+					case 'divd':
+						this.value /= now;
+						this.text = this.value;
+						break;
+					case 'minus':
+						this.value -= now;
+						this.text = this.value;
+						break;
+					case 'times':
+						this.value *= now;
+						this.text = this.value;
+						break;
+					default:
+						this.value = now;
+				}
 			}
 			this.status[1] = operand;
 			this.status[0] = 1;
@@ -53,11 +57,12 @@ $(document).ready(function() {
 		reset: function(){
 			this.clear();
 			this.value = 0;
-			this.status = 0;
+			this.status[0] = 1;
 			this.updateDisplay();
 		},
 		clear: function(){
 			this.text = '0';
+			this.status[0] = 1;
 			this.updateDisplay();
 		},
 		text: '0',
@@ -85,7 +90,7 @@ $(document).ready(function() {
 							<button class="num" id="pad2">2</button>
 							<button class="num" id="pad1">1</button>
 							<button class="num" id="pad0">0</button>
-							<button class="num" id="paddot">.</button>
+							<button class="num" id="pad.">.</button>
 						</div>
 						<div id="operand">
 							<button class="system" id="clear">CLR</button>
